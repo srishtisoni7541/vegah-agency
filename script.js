@@ -26,8 +26,9 @@ tl.to('.h1text h1',{
 
 
 // Select the elements
-var menubar = document.querySelector('.page1 nav i');
+var menubar = document.querySelector(' nav #icon');
 menubar.addEventListener('click',function(){
+    // console.log('ha')
     gsap.to('.page1 .menucontainer',{
         left:0,
         duration:.5,

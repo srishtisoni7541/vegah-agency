@@ -131,7 +131,6 @@ html.lenis, html.lenis body {
     overflow: hidden;
   }
  
- 
 
   
 nav {
@@ -1446,14 +1445,16 @@ font-family: sans-serif;
     justify-content: flex-start;
     position: relative;
     left: -100%;
+    background-color: #fff;
   }
   .menucontainer a{
     font-size: 5vw;
   }
-  .menucontainer i{
+  .menucontainer i {
+    font-size: 5vw;
     position: relative;
-    left: 35vw;
-    font-weight: 600;
+    left: 0; /* Adjusted for visibility */
+    color: #000; /* Ensure color is set if the icon is visible */
   }
   .h1text h1{
     display: none;
