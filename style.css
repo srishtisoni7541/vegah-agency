@@ -180,17 +180,7 @@ nav i{
   font-size: 4vw;
   display: none;
 }
-.respo {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  right: -100%;
-  -webkit-transition: ease-out 0.2s;
-  -o-transition: ease-out 0.2s;
-  transition: ease-out 0.2s;
-  padding: 20px;
-}
+
 .mega .temp {
   display: flex;
   align-items: center;
@@ -201,9 +191,6 @@ nav i{
   left: -10vw;
   top: .5vw;
 
-}
-.respo i{
-  opacity: 0;
 }
 /*!--------------------------------------------- nav-logo ----------------------------- */
 
@@ -238,6 +225,7 @@ a {
   color: var(--text);
   /* font-size: 0.875rem; */
   font-size: 1.2vw;
+  z-index: 999;
   text-decoration: none;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
@@ -321,6 +309,7 @@ background-color: #fff !important;
   position: relative;
   z-index: 99999;
   gap: 1vw;
+  /* left: 10vw; */
   
   &:hover {
     -webkit-box-shadow: 0 0 0.35rem 0 rgba(0, 0, 0, 0.5);
@@ -459,13 +448,14 @@ li {
   }
 
   li {
-    padding: 0.65rem 0;
+    /* padding: 0.65rem 0; */
     -webkit-box-flex: 1;
     -ms-flex: 1;
     flex: 1;
     text-align: center;
     cursor: pointer;
     list-style: none;
+   
   }
 }
 .ul {
