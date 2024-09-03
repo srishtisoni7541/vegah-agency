@@ -132,113 +132,297 @@ html.lenis, html.lenis body {
   }
  
  
-   .page1 .menucontainer{
-    display: flex;
-    flex-direction: column;
-    gap: 2vw;
-    align-items: flex-start;
-    justify-content: center;
-    height: 81%;
-    width:20vw;
-    display: none;
-    background-color: #fff;
-    position: absolute;
+
+  
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 999999;
+  border-bottom: 0.5px solid var(--secondry);
+  color: var(--text);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  height: 5vw;
+  background-color: #fff;
+  padding-right: 4vw;
+}
+nav i{
+  font-size: 2vw;
+  position: relative;
+  top: .5vw;
+  right:1vw;
+  /* display: none; */
+}
+
+ .menucontainer {
+  display: none;
+}
+.menu-icon {
+  margin-right: 10%;
+  font-size: 4vw;
+  display: none;
+}
+.respo {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  -webkit-transition: ease-out 0.2s;
+  -o-transition: ease-out 0.2s;
+  transition: ease-out 0.2s;
+  padding: 20px;
+}
+.respo .temp {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-size: 2vw;
+}
+.respo i{
+  opacity: 0;
+}
+/*!--------------------------------------------- nav-logo ----------------------------- */
+
+.mega {
+  width: 60%;
+  top: 25%;
+  right: 10px;
+
+}
+nav .logo {
+  width: 13vw;
+  margin-left: 20%;
+}
+nav .logo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  display: block;
+  padding: 0.2rem 0;
+  /* color: #000; */
+  color: var(--text);
+  /* font-size: 0.875rem; */
+  font-size: 1.2vw;
+  text-decoration: none;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+  &:hover {
+    color: blue;
+    text-decoration: underline;
+
   }
-  .menucontainer a{
-    text-decoration: none;
-    font-size: 2vw;
-    font-family: sans-serif;
-    color: black;
+}
+
+h4 {
+  margin: 0.5rem 0 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #ddd;
+  font-size: 1.25rem;
+  font-weight: normal;
+}
+
+h5 {
+  margin: 0;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+}
+
+nav::after {
+  /* content: ''; */
+  display: block;
+  clear: both;
+}
+
+.menu {
+  display: inline-block;
+  border-radius: 0.2rem;
+background-color: #fff !important;
+  position: relative;
+  z-index: 2;
+  gap: 2vw;
+  
+  &:hover {
+    -webkit-box-shadow: 0 0 0.35rem 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 0.35rem 0 rgba(0, 0, 0, 0.5);
+    background-color: white;
+    position: absolute;
+
+    > li {
+      display: block;
+
+      &:first-child {
+        border-color: transparent;
+        border-bottom: none;
+        border-radius: 0.2rem 0.2rem 0 0;
+        /* background-color: #eee; */
+        background-color:white;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        position: relative;
+        z-index: 1;
+        color: var(--text);
+        cursor: default;
+      }
+
+      &:last-child {
+        border-radius: 0 0 0.2rem 0.2rem;
+      }
+    }
+
+    + .temp::after {
+      display: block;
+    }
   }
 
-  .navtop{
-    height: 3vw;
-    width: 100%;
-    background-color: #111;
-  }
-  .navbtm{
-    height: 6vw;
-    width: 100%;
-    background-color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position:relative;
-  }
-  .navbtm .navright{
-    display: flex;
-    gap: 2vw;
-    padding-right: 2vw;
-  }
-  .navright a{
-    text-decoration: none;
-    font-size: 2vw;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: #111;
-    transition: all ease  .5s;
-  }
-  .navbtm i{
-    font-size: 3vw;
+  > li {
     display: none;
+    width: 12rem;
+    margin: 0;
+    border-right: 1px solid var(--secondry);
+
+    &:first-child {
+      list-style: none;
+      display: block;
+      padding: 0.65rem;
+      border-radius: 0.2rem;
+      background-color: transparent;
+      -webkit-box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.5);
+      color: var(--text);
+      font-weight: bold;
+      font-size: 0.875rem;
+      cursor: pointer;
+    }
+
+    &:not(:first-child):hover {
+      font-size: 1.2vw;
+      width: calc(960px - 6rem);
+      border-right: none;
+    }
   }
-  a:hover{
-    color: #410dfd;
-    /* font-size: 1.8vw;/ */
+}
+
+li {
+  h3 {
+    width: 12rem;
+    margin: 0;
+    padding: 0.65rem 0.75rem;
+    border: 1px solid transparent;
+    border-width: 1px 0;
+    /*! background: #fff; */
+    background: var(--dark-box-left);
+    position: relative;
+    z-index: 10;
+    font-size: 1.2vw;
+    font-weight: normal;
+    cursor: default;
   }
 
-  .navbtm .navlogo img{
-    height: 5vw;
-    width: 15vw;
-    object-fit: cover;
+  &:last-child {
+    h3 {
+      border-radius: 0 0 0.2rem 0.2rem;
+    }
+
+    &:hover h3 {
+      border-bottom-color: transparent;
+      border-radius: 0 0 0 0.2rem;
+    }
   }
-  .navbtm .servicemenu{
-    height: 20vw;
-    width: 35vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 3vw;
+
+  &:hover {
+    h3 {
+      width: calc(12rem + 1px);
+      border-color: var(--secondry);
+    }
+
+    div {
+      display: block;
+      background-color: var(--dark-box);
+    }
+  }
+
+  div {
+    display: none;
+    width: calc(960px - 6rem - 12rem);
+    padding: 1rem 1.2rem;
+    border-left: 1px solid var(--secondry);
+    border-radius: 0 0.2rem 0.2rem 0;
+    /*! background: #fff; */
     position: absolute;
-    background-color: #fff;
-    left: 60vw;
-    top:5vw;
-    transition: all ease .5s;
-    opacity: 0;
+    top: 0;
+    bottom: 0;
+    left: 12rem;
+    z-index: 1;
   }
+}
+
+.temp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 72%;
+  border-radius: 0.2rem;
+  float: right;
+  font-size: 0.875rem;
+
+  &::after {
+    content: "";
+    display: none;
+    background: rgba(0, 0, 0, 0.35);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+
+  li {
+    padding: 0.65rem 0;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    text-align: center;
+    cursor: pointer;
+    list-style: none;
+  }
+}
+.ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 3%;
+}
+.ul > ul {
+  width: 40%;
+}
+  
+
+
  
-  .servicemenu .servicemenuleft{
-    display: flex;
-    flex-direction: column;
-    gap: 1vw;
-    padding: 2vw;
-    align-items: flex-start;
-    
-  }
-  .servicemenuleft a{
-    text-decoration: none;
-    font-size: 1.5vw;
-    color: #111;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  }
-
-  .servicemenu .servicemenuright{
-    display: flex;
-    flex-direction: column;
-    gap: 1vw;
-    padding: 2vw;
-    align-items: flex-start;
-    
-  }
-  .servicemenuright a{
-    text-decoration: none;
-    font-size: 1.5vw;
-    color: #111;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  }
   
   .page1 .textcontainer{
     position: relative;
-    top: 10vw;
+    top: 15vw;
     display:flex;
     flex-direction: column;
     left: 30vw;
@@ -273,7 +457,7 @@ html.lenis, html.lenis body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: #8BC53F;
     position: relative;
-    top: 13vw;
+    top: 18vw;
     left: 45vw;
     scale: 1;
     transition: all ease-in-out .5s;
@@ -320,8 +504,6 @@ html.lenis, html.lenis body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 4vw;
     color: white;
-    position: relative;
-    bottom: -100%;
   }
 .page2 .imgcontainer2{
     height: 25vw;
@@ -352,7 +534,7 @@ html.lenis, html.lenis body {
   /* padding: 2vw; */
   justify-content: space-around;
 
-  z-index: 999;
+  z-index: 99;
   
 }
 .img2 img{
@@ -486,9 +668,6 @@ html.lenis, html.lenis body {
   .h3text h3{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 3vw;
-    position: relative;
-    right: -100%;
-    opacity: 0;
 
   }
 
@@ -551,8 +730,6 @@ html.lenis, html.lenis body {
   .h5text h5{
     font-size: 3vw;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    position: relative;
-    left: -100%;
   }
 
   .page4imgcontainer{
@@ -648,7 +825,7 @@ html.lenis, html.lenis body {
     align-items: center;
     justify-content: center;
     position: relative;
-    top:20vw;
+    top: 8vw;
   }
   .page5box .page5boxtop{
     height: 70%;
@@ -693,7 +870,7 @@ justify-content: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 4vw;
     position: relative;
-    top: -5vw;
+    /* top: 2vw; */
 
   }
 
@@ -858,8 +1035,6 @@ justify-content: center;
   align-items: center;
   justify-content: center;
   gap: 2vw;
-  position:relative;
-  top: 10vw;
 }
 .elem6{
   height: 70%;
@@ -972,7 +1147,7 @@ justify-content: center;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: #333;
   position: relative;
-  top: -3vw;
+  /* top: -3vw; */
 }
 
 .plan .price {
@@ -982,7 +1157,7 @@ justify-content: center;
   font-weight: 600;
   /* margin: 10px 0; */
   position: relative;
-  top: -4vw;
+  /* top: -4vw; */
 }
 
 .plan p{
@@ -1258,29 +1433,9 @@ font-family: sans-serif;
     width: 100%;
     overflow: hidden;
   }
-  .page1 .navtop{
-    height: 10vw !important;
-    width: 100%;  
-  }
-  .page1 .navbtm{
-    height: 10vw;
-    width: 100%;
-  }
-  .navlogo img{
-    height: 7vw !important;
-    width: 25vw !important;
-    object-fit: cover;
-  }
-     .navbtm .navright{
-    display: none;
-  }
-
-  .navbtm #icon{
-    display: initial;
-    font-size: 6vw !important;
-    padding-right: 5vw;
-    z-index:99;
-  }
+ 
+ 
+  
   .page1 .menucontainer{
     display: initial;
     display: flex;
@@ -1304,6 +1459,21 @@ font-family: sans-serif;
     display: none;
 
   }
+  nav{
+    height: 20vw;
+  }
+  nav .mega{
+    display: none;
+  }
+  nav .logo img{
+    height: 10vw;
+    width: 25vw;
+  }
+
+nav i{
+  font-size: 8vw;
+  margin-right: 5vw;
+}
   .h1text::before {
     content: 'IT Consulting  services';
     position: absolute;
@@ -1377,27 +1547,20 @@ font-family: sans-serif;
   margin-top: 13vw;
  }
 
-.container2::before{
-  content: 'We offer a wide variety of it services';
-  position: absolute;
-  color: white;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 11vw !important;
-  font-weight: 600;
-  display: flex;
-  text-align: center;
-  white-space: normal;
-  left: -3vw;
-  /* top: 5vw; */
-  padding: 4vw;
-}
-
 
 .page2 .blueline{
   position: relative;
   top: 5vw;
   height: 4vw;
   width: 14vw;
+}
+.h2textcontainer{
+  height: 10vw;
+  width: 100%;
+  white-space:nowrap;
+}
+.container2 h2{
+  font-size: 8vw;
 }
 
 .page3{
@@ -1584,7 +1747,7 @@ font-family: sans-serif;
   width: 100%;
   height: 60vw;
   position: relative;
-  top: 70vw;
+  top: 80vw;
 }
 .page5box h1{
   font-size: 5vw;
@@ -1620,12 +1783,12 @@ font-family: sans-serif;
 .team-member h4{
   font-size: 5vw;
   position: relative;
-  top: -3vw;
+  top: -4vw;
 }
 .team-member p{
   font-size: 4vw;
   position: relative;
-  top: -5vw;
+  top: -7vw;
 }
 .page6 .page6btm{
   width: 100%;
@@ -1735,6 +1898,9 @@ font-family: sans-serif;
 }
 .logocircle i{
   font-size: 5vw;
+}
+.container9 a{
+  font-size: 4vw;
 }
 .page9left img{
   height: 10vw;
